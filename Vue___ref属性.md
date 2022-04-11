@@ -8,7 +8,13 @@
 
    ![Image](D:\jirengu\learn-notes\assets\Image-1649688510065.png)
 
-3. 放入html标签中，可以获取DOM节点
+3. 
+
+4. 放入html标签中，可以获取DOM节点
+
+5. 
+
+6. ![Image](Vue___ref属性.assets/Image.png)
 
    ![Image](D:\jirengu\learn-notes\assets\Image-1649688555240.png)
 
@@ -36,3 +42,6 @@
 
 - 可以用于组件通信（待深入）
 
+![Image](Image.png)
+
+![Image](assets/Image-1649690133007.png)
