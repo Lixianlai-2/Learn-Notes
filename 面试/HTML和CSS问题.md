@@ -30,6 +30,8 @@
 
 # BFC是什么
 
+### 定义与解释
+
 BFC就是块级格式化上下文
 
 ### 常见的触发它的方式
@@ -43,6 +45,10 @@ BFC就是块级格式化上下文
 ### 解决的问题
 
 - 可以用来清除浮动
+  - 在父元素中设置
+    - display:inline-block
+    - overflow:auto
+    - position:absolute/fixed
 - 避免垂直方向上的margin合并
 
 # 如何实现垂直居中
@@ -352,11 +358,29 @@ BFC就是块级格式化上下文
     }
     ```
 
-# 如何清除浮动
+# 清除浮动
 
-在要清除浮动的那个元素的父级元素上添加.clearfix
+### 什么情况下需要清除浮动
 
-而clearfix中的内容是
+- 以下图为例，fatherDiv想要被son1撑起
+- 但这时的son1已经浮动了，所以这时时被son2撑起的
+
+```
+
+
+```
+
+![image-20220608104713227](assets/image-20220608104713227.png)
+
+#### 想要的效果
+
+fatherDiv被son1撑起
+
+![image-20220608113037648](assets/image-20220608113037648.png)
+
+### 清除浮动的方式
+
+#### 设置`clearfix:after`，在父级元素上添加clearfix
 
 ```css
 .clearFix:after{
@@ -364,11 +388,19 @@ BFC就是块级格式化上下文
     content:'';
     clear:both;
 }
+
+.clearFix {
+    zoom:1; 兼容ie
+}
 ```
 
+#### 形成BFC
 
+在父级元素上使用
 
-
+- `display:inline-block`
+- `position:absolute`
+- `overflow:auto`
 
 
 
